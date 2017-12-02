@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/FrederickEngelhardt/telephoneGame/issues"
   },
-  "homepage": "https://github.com/FrederickEngelhardt/telephoneGame#readme"
+  "homepage": "https://github.com/FrederickEngelhardt/telephoneGame#readme",
+  "dependencies": {
+    "materialize-css": "^0.100.2"
+  }
 }
