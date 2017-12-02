@@ -1,0 +1,12 @@
+html {
+  background-color: #EEEEEE;
+  /*font-family: 'Helvetica Neue', Arial, sans-serif;*/
+  -webkit-font-smoothing: antialiased;
+  font-size: medium-small;
+  color: #666666;
+  /*background: url("../img/bgimg.png") no-repeat center center fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
