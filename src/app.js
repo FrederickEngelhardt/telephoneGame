@@ -17,7 +17,7 @@ const createTextbox = () => {
               </div>
               <div class="card-content">
                 Input Your Intepretation: <input type="text" name="fname">
-                <a id="button1" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>button</a>
+                <a id="button${count}" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>button</a>
               </div>
             </div>
           </div>
