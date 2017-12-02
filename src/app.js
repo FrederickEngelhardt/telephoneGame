@@ -8,11 +8,20 @@ function getStatus (status){
 const createTextbox = () => {
   count++
   $('.addon').append(
-    `<div class='row'>
-        <div class="table${count}">
-          <input></input><a id="button${count}" class="waves-effect waves-light btn"><i class="materisal-icons right sendTxt"></i>button</a>
-        </div>
-      </div>`)
+    `    <div class="row">
+          <div class="col s12 m12 l12">
+            <div class="card">
+              <div class="card-image">
+                <img src="image1.jpg">
+                <span class="card-title"></span>
+              </div>
+              <div class="card-content">
+                Input Your Intepretation: <input type="text" name="fname">
+                <a id="button1" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>button</a>
+              </div>
+            </div>
+          </div>
+        </div>`)
   createListeners()
 }
 const createListeners = () => {
