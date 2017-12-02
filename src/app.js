@@ -1,4 +1,29 @@
 // let status = 'textbox'
+var defaultBoard = new DrawingBoard.Board('default-board');
+var drawboardHTML = 		
+`<div class="row">
+		<div class="example" data-example="1">
+				<div class="board" id="default-board">
+				</div>
+				</div>
+	</div>`;
+
+
+function createDrawingBoard() {
+  var defaultBoard = new DrawingBoard.Board('default-board');
+	var isMomHappy = true;
+	var currentEnd = ".table" + count;
+	
+	console.log(currentEnd);
+
+		$(currentEnd).append(
+` <div class="example" data-example="default-board${count}">
+				<div class="board" id="default-board${count}">
+				</div>
+				</div>
+		</div>`);
+}
+
 let status = 'drawing'
 let count = 1
 function getStatus (status){
@@ -27,9 +52,12 @@ const createTextbox = () => {
 const createListeners = () => {
   return $(`#button${count}`).click( () => {
     getStatus(status)
+		createDrawingBoard();
   })
 }
 $(document).ready( () => {
+  $(".addon").append(drawboardHTML);
   $('.modal').modal()
   createListeners()
-})
+  });
+

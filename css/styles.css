@@ -10,3 +10,14 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.board {
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+}
+
+#default-board {
+	width: 700px;
+	height: 400px;
+}
