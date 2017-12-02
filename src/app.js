@@ -21,5 +21,6 @@ const createListeners = () => {
   })
 }
 $(document).ready( () => {
+  $('.modal').modal()
   createListeners()
 })
