@@ -67,6 +67,10 @@ const createTextbox = () => {
   return createListeners()
 }
 const createListeners = () => {
+  if (count > 1) {
+    let modify = count-1
+    $(`#${modify}`).css("display", "none")
+  }
   if (status === 'textbox' && count >= 2 ) {
     console.log('hello')
     let modify = count-1
