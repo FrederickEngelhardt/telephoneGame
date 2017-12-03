@@ -1,10 +1,24 @@
+let numOfPlayers = 0
 let status = 'textbox'
 let count = 1
 let text = null
+let lc = null
 let textCount = 1
 let previousDrawing = null
-let lc = null
-function grabText () {
+
+function reveal() {
+  for (i = 1; i <= numOfPlayers; i++) {
+    let modify = i
+    $(`#${modify}`).css("display", "block")
+  }
+}
+
+function getNumOfPlayers() {
+  numOfPlayers = $(`#textBar`).val()
+  return numOfPlayers
+}
+
+function grabText() {
   text = $(`#textBar${textCount}`).val()
   console.log('count',count);
   console.log('THIS IS TEXT', text);
@@ -84,6 +98,9 @@ const createTextbox = () => {
   return createListeners()
 }
 const createListeners = () => {
+  if (count >= numOfPlayers) {
+    return reveal()
+  }
   if (count > 1) {
     let modify = count-1
     $(`#${modify}`).css("display", "none")
@@ -115,6 +132,7 @@ function encodeOptimizedSVGDataUri(svgString) {
 $(document).ready( () => {
   $(".button-collapse").sideNav();
   $('.modal').modal()
+  getNumOfPlayers()
   createListeners()
   createTextbox()
   });
