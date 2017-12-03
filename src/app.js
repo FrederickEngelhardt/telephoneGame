@@ -6,15 +6,15 @@ let lc = null
 let textCount = 1
 let previousDrawing = null
 
-function reveal() {
-  for (i = 1; i <= numOfPlayers; i++) {
-    let modify = i
-    $(`#${modify}`).css("display", "block")
-  }
-}
+// function reveal() {
+//   for (i = 1; i <= numOfPlayers; i++) {
+//     let modify = i
+//     $(`#${modify}`).css("display", "block")
+//   }
+// }
 
 function getNumOfPlayers() {
-  numOfPlayers = $(`#textBar`).val()
+  numOfPlayers = $(`#numOfPlayers`).val()
   return numOfPlayers
 }
 
@@ -96,8 +96,9 @@ const createTextbox = () => {
   return createListeners()
 }
 const createListeners = () => {
-  if (count >= numOfPlayers) {
-    return reveal()
+  let numPlayer = getNumOfPlayers()
+  if (count > numPlayer) {
+    return showStory()
   }
   if (count > 1) {
     let modify = count-1
@@ -105,7 +106,7 @@ const createListeners = () => {
   }
 	if (status === 'textbox' && count > 1 )
 		previousDrawing = encodeOptimizedSVGDataUri(lc.getSVGString())
-  
+
   // if (status === 'textbox' && count >= 2 ) {
   //   let modify = count-1
   //   $(`#image${count}`).append($(`#drawingBoard${modify}`))
@@ -128,6 +129,7 @@ function showStory() {
 				}
 		}
 	});
+  alert(`Thanks for playing! Check everyone's answers`)
 }
 
 function encodeOptimizedSVGDataUri(svgString) {
@@ -141,10 +143,11 @@ function encodeOptimizedSVGDataUri(svgString) {
 
 	return 'data:image/svg+xml,' + uriPayload;
 }
+
+
 $(document).ready( () => {
   $(".button-collapse").sideNav();
   $('.modal').modal()
-  getNumOfPlayers()
   createListeners()
   createTextbox()
   });
