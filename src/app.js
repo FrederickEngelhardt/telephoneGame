@@ -1,3 +1,4 @@
+let numOfPlayers = 0
 let status = 'textbox'
 let count = 1
 let text = null
