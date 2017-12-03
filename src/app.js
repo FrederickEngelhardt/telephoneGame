@@ -14,10 +14,12 @@ function createDrawingBoard() {
   let getText = grabText()
   console.log(getText);
   $('.addon').append(
-    `        <div class="row">
+    `        <div id=${count} class="row">
               <div class="col s12 m12 l12">
                 <div class="card">
-                <span id="interpret-title${count}" class="card-title">LALALALAL${getText}</span>
+                <div class="center-align">
+                <span id="interpret-title${count}" class="card-title">Please draw out this text: ${getText}</span>
+                </div>
                   <div class="card-image">
                   </div>
                   <div class="card-content">
@@ -46,7 +48,7 @@ function getStatus (status){
 }
 const createTextbox = () => {
   $('.addon').append(
-    `    <div class="row">
+    `    <div id=${count} class="row">
           <div class="col s12 m12 l12">
             <div class="card">
               <div class="card-image">
@@ -71,6 +73,7 @@ const createListeners = () => {
   })
 }
 $(document).ready( () => {
+  createTextbox()
   $('.modal').modal()
   createListeners()
   });
