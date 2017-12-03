@@ -1,62 +1,58 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>About Interpret-It</title>
-<script
-src="https://code.jquery.com/jquery-3.2.1.js"
-integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-crossorigin="anonymous"></script>
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<!--Import Google Icon Font-->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<html class="about">
 
-<link rel="stylesheet" href="css/styles.css">
+<head>
+  <meta charset="UTF-8">
+  <title>About Interpret-It</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css">
   <script src="./src/app.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
+<body class="about">
 
-  <nav class="container">
-    <div class="nav-wrapper purple blue">
-      <a href="#" class="brand-logo"> About Interpret-It</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-       <li><a href="index.html">Home</a></li>
-        <li><a href="badges.html">Instructions</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#!" class="brand-logo logo">Interpret-It</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#modal1" class="modal-trigger">Instructions</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="about.html">About</a></li>
+        <li><a href="#modal1" class="modal-trigger">Instructions</a></li>
       </ul>
     </div>
   </nav>
   <div class="container">
     <div class="row">
-          <div class="col s12 m12 l12 center-align">
-            <div class="card">
-              <div class="card-image">
-                <img src="image2.png">
+      <div class="col s12 m12 l12 center-align">
+        <div class="card">
+          <span class="card-title">About Us</span>
+          <div class="card-image">
+            <img src="image2.png">
 
-              </div>
-              <div class="card-content">
-                <p> This game is based off perception. You write a story and someone creates<br>
-                their iterpratation of it in visual form. This process repeats and we get to<br>
-                see how much your story has changed as it gets further and further misinterpreted!<br>
-               This was inspired by the telephone game where a group of people sit in a circle<br>
-               and attempt to keep the orginal message intact and when this inevitable fails try<br>
-               to find out where the message was corrupted.
-              </p>
-              </div>
-              <div class="card-action">
-                <a href="index.html">Play</a>
-              </div>
-            </div>
+          </div>
+          <div class="card-content">
+            <p> This game is based off perception. You write a story and someone creates<br> their iterpratation of it in visual form. This process repeats and we get to<br> see how much your story has changed as it gets further and further misinterpreted!<br>              This was inspired by the telephone game where a group of people sit in a circle<br> and attempt to keep the orginal message intact and when this inevitable fails try<br> to find out where the message was corrupted.
+            </p>
+          </div>
+          <div class="card-action">
+            <a href="index.html">Play</a>
           </div>
         </div>
       </div>
-
-
-
+    </div>
+  </div>
 </body>
+
 </html>
