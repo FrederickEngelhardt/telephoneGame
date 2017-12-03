@@ -4,7 +4,13 @@ let count = 1
 let text = null
 let textCount = 1
 let previousDrawing = null
-function grabText () {
+
+function getNumOfPlayers() {
+  numOfPlayers = $(`#textBar`).val()
+  return numOfPlayers
+}
+
+function grabText() {
   text = $(`#textBar${textCount}`).val()
   console.log('count',count);
   console.log('THIS IS TEXT', text);
