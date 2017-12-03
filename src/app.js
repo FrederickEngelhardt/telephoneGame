@@ -3,6 +3,7 @@ let count = 1
 let text = null
 let textCount = 1
 let previousDrawing = null
+let lc = null
 function grabText () {
   text = $(`#textBar${textCount}`).val()
   console.log('count',count);
@@ -32,7 +33,7 @@ function createDrawingBoard() {
             </div>
   `)
   // This is the drawing Framework Area
-  LC.init(document.getElementById(`drawingBoard${count}`), {
+  lc = LC.init(document.getElementById(`drawingBoard${count}`), {
    imageURLPrefix: 'images/lc-images',
    toolbarPosition: 'bottom',
    defaultStrokeWidth: 2,
@@ -48,11 +49,22 @@ function getStatus (status){
   else if (status === 'textbox') {return createDrawingBoard()}
 }
 const createTextbox = () => {
+		let tmp = ""
+		console.log(tmp);
+	if(lc !== null){
+		previousDrawing = encodeOptimizedSVGDataUri(lc.getSVGString())
+		tmp = previousDrawing
+	}
+	let imageString = ""
+	if(count > 1) {
+		imageString	= '<img width="300px" height="300px" src="' + tmp + '"></img>'
+	}
   $('.addon').append(
     `    <div id=${count} class="row">
           <div class="col s12 m12 l12">
             <div class="card">
               <div id="image${count}" class="card-image">
+							${imageString}
                 <span class="card-title"></span>
               </div>
               <div class="card-content">
@@ -62,6 +74,11 @@ const createTextbox = () => {
             </div>
           </div>
         </div>`)
+	if(count > 1) {
+		let modify = count - 1
+		$(`#${modify}`).css("display", "none")
+		$(`#drawingBoard${modify}`).css("display", "none")
+	}
   status = 'textbox'
   console.log(status);
   return createListeners()
@@ -71,8 +88,9 @@ const createListeners = () => {
     let modify = count-1
     $(`#${modify}`).css("display", "none")
   }
+	if (status === 'textbox' && count > 1 )
+		previousDrawing = encodeOptimizedSVGDataUri(lc.getSVGString())
   if (status === 'textbox' && count >= 2 ) {
-    console.log('hello')
     let modify = count-1
     $(`#image${count}`).append($(`#drawingBoard${modify}`))
   }
@@ -81,6 +99,18 @@ const createListeners = () => {
     count++
     getStatus(status)
   })
+}
+
+function encodeOptimizedSVGDataUri(svgString) {
+	var uriPayload = encodeURIComponent(svgString) // encode URL-unsafe characters
+		.replace(/%0A/g, '') // remove newlines
+		.replace(/%20/g, ' ') // put spaces back in
+		.replace(/%3D/g, '=') // ditto equals signs
+		.replace(/%3A/g, ':') // ditto colons
+		.replace(/%2F/g, '/') // ditto slashes
+		.replace(/%22/g, "'"); // replace quotes with apostrophes (may break certain SVGs)
+
+	return 'data:image/svg+xml,' + uriPayload;
 }
 $(document).ready( () => {
   $(".button-collapse").sideNav();
