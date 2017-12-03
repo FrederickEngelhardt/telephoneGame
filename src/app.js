@@ -73,6 +73,7 @@ const createListeners = () => {
   })
 }
 $(document).ready( () => {
+  $(".button-collapse").sideNav();
   createTextbox()
   $('.modal').modal()
   createListeners()

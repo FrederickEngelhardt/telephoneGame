@@ -13,6 +13,8 @@
   <script src="src/react-0.14.3.js"></script>
   <script src="src/literallycanvas.js"></script>
   <!--  -->
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/literallycanvas.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no" />
@@ -38,15 +40,22 @@
 </head>
 
 <body>
+
   <nav>
-    <div class="nav-wrapper purple blue">
-      <a href="#" class="brand-logo">Interpret-It</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="about.html">About</a></li>
-        <li><a href="#modal1" class="modal-trigger">Instructions</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="nav-wrapper blue">
+    <a href="#!" class="brand-logo">Interpret-It</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="about.html">About</a></li>
+      <li><a href="#modal1" class="modal-trigger">Instructions</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="about.html">About</a></li>
+      <li><a href="#modal1" class="modal-trigger">Instructions</a></li>
+    </ul>
+  </div>
+</nav>
+
 
 
   <!-- <iframe src="http://fredericke-pixel-art-maker.surge.sh/"></iframe> -->
