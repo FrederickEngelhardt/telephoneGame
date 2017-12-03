@@ -97,7 +97,8 @@ const createTextbox = () => {
 }
 const createListeners = () => {
   let numPlayer = getNumOfPlayers()
-  if (count > numPlayer) {
+  let check = count-2
+  if (check > numPlayer) {
     return showStory()
   }
   if (count > 1) {
