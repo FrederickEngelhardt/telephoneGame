@@ -118,6 +118,19 @@ const createListeners = () => {
   })
 }
 
+function showStory() {
+	$("div").each(function(){
+		if($(this).css("display")=="none"){
+			//Your code here
+			if ( $( this ).is( ":contains('drawingBoard*')" ) )
+				console.log("drawingBoard")
+			else {
+					$(this).css("display", "block")
+				}
+		}
+	});
+}
+
 function encodeOptimizedSVGDataUri(svgString) {
 	var uriPayload = encodeURIComponent(svgString) // encode URL-unsafe characters
 		.replace(/%0A/g, '') // remove newlines
