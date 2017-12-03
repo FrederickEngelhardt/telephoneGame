@@ -40,7 +40,7 @@ function createDrawingBoard() {
                   </div>
                   <div class="card-content">
                     <div id="drawingBoard${count}"></div>
-                    <a id="button${count}" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>button</a>
+                    <a id="button${count}" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>submit</a>
                   </div>
                 </div>
               </div>
@@ -81,7 +81,7 @@ const createTextbox = () => {
               </div>
               <div class="card-content">
                 Input Your Intepretation: <input id="textBar${textCount}" type="text" name="fname">
-                <a id="button${count}" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>button</a>
+                <a id="button${count}" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>submit</a>
               </div>
             </div>
           </div>
