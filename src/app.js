@@ -92,6 +92,7 @@ const createListeners = () => {
 $(document).ready( () => {
   $(".button-collapse").sideNav();
   $('.modal').modal()
+  getNumOfPlayers()
   createListeners()
   createTextbox()
   });
