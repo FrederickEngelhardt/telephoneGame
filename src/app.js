@@ -63,8 +63,6 @@ function getStatus (status){
   else if (status === 'textbox') {return createDrawingBoard()}
 }
 const createTextbox = () => {
-		let tmp = ""
-		console.log(tmp);
 	if(lc !== null){
 		previousDrawing = encodeOptimizedSVGDataUri(lc.getSVGString())
 		tmp = previousDrawing
@@ -107,10 +105,11 @@ const createListeners = () => {
   }
 	if (status === 'textbox' && count > 1 )
 		previousDrawing = encodeOptimizedSVGDataUri(lc.getSVGString())
-  if (status === 'textbox' && count >= 2 ) {
-    let modify = count-1
-    $(`#image${count}`).append($(`#drawingBoard${modify}`))
-  }
+  
+  // if (status === 'textbox' && count >= 2 ) {
+  //   let modify = count-1
+  //   $(`#image${count}`).append($(`#drawingBoard${modify}`))
+  // }
   console.log(count,status);
   return $(`#button${count}`).click( () => {
     count++
