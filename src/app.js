@@ -2,6 +2,7 @@ let status = 'textbox'
 let count = 1
 let text = null
 let textCount = 1
+let previousDrawing = null
 function grabText () {
   text = $(`#textBar${textCount}`).val()
   console.log('count',count);
@@ -51,7 +52,7 @@ const createTextbox = () => {
     `    <div id=${count} class="row">
           <div class="col s12 m12 l12">
             <div class="card">
-              <div class="card-image">
+              <div id="image${count}" class="card-image">
                 <span class="card-title"></span>
               </div>
               <div class="card-content">
@@ -66,6 +67,11 @@ const createTextbox = () => {
   return createListeners()
 }
 const createListeners = () => {
+  if (status === 'textbox' && count >= 2 ) {
+    console.log('hello')
+    let modify = count-1
+    $(`#image${count}`).append($(`#drawingBoard${modify}`))
+  }
   console.log(count,status);
   return $(`#button${count}`).click( () => {
     count++
@@ -74,7 +80,7 @@ const createListeners = () => {
 }
 $(document).ready( () => {
   $(".button-collapse").sideNav();
-  createTextbox()
   $('.modal').modal()
   createListeners()
+  createTextbox()
   });
