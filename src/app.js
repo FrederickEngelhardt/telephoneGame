@@ -1,17 +1,34 @@
 let status = 'textbox'
 let count = 1
-var drawboardHTML =
-`<div class="row">
-		<div class="example" data-example="1">
-				<div class="board" id="default-board"></div>
-		</div>
-  </div>`;
+let text = null
+let textCount = 1
+function grabText () {
+  text = $(`#textBar${textCount}`).val()
+  console.log('count',count);
+  console.log('THIS IS TEXT', text);
+  textCount++
+  return text
+}
 
 function createDrawingBoard() {
+  let getText = grabText()
+  console.log(getText);
   $('.addon').append(
-    `<div id="drawingBoard${count}"></div>
-    <a id="button${count}" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>button</a>
+    `        <div class="row">
+              <div class="col s12 m12 l12">
+                <div class="card">
+                <span id="interpret-title${count}" class="card-title">LALALALAL${getText}</span>
+                  <div class="card-image">
+                  </div>
+                  <div class="card-content">
+                    <div id="drawingBoard${count}"></div>
+                    <a id="button${count}" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>button</a>
+                  </div>
+                </div>
+              </div>
+            </div>
   `)
+  // This is the drawing Framework Area
   LC.init(document.getElementById(`drawingBoard${count}`), {
    imageURLPrefix: 'images/lc-images',
    toolbarPosition: 'bottom',
@@ -36,7 +53,7 @@ const createTextbox = () => {
                 <span class="card-title"></span>
               </div>
               <div class="card-content">
-                Input Your Intepretation: <input type="text" name="fname">
+                Input Your Intepretation: <input id="textBar${textCount}" type="text" name="fname">
                 <a id="button${count}" class="waves-effect waves-light btn"><i class="material-icons right sendTxt"></i>button</a>
               </div>
             </div>
@@ -54,7 +71,6 @@ const createListeners = () => {
   })
 }
 $(document).ready( () => {
-  // $(".addon").append(drawboardHTML);
   $('.modal').modal()
   createListeners()
   });
