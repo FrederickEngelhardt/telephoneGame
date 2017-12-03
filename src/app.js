@@ -5,6 +5,13 @@ let text = null
 let textCount = 1
 let previousDrawing = null
 
+function reveal() {
+  for (i = 1; i <= numOfPlayers; i++) {
+    let modify = i
+    $(`#${modify}`).css("display", "block")
+  }
+}
+
 function getNumOfPlayers() {
   numOfPlayers = $(`#textBar`).val()
   return numOfPlayers
@@ -74,6 +81,9 @@ const createTextbox = () => {
   return createListeners()
 }
 const createListeners = () => {
+  if (count >= numOfPlayers) {
+    return reveal()
+  }
   if (count > 1) {
     let modify = count-1
     $(`#${modify}`).css("display", "none")
