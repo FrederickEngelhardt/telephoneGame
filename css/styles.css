@@ -21,3 +21,14 @@ html {
 	width: 700px;
 	height: 400px;
 }
+
+.fs-container {
+  width: 320px;
+  margin: auto;
+}
+
+.literally {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}

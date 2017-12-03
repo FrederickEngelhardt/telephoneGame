@@ -6,13 +6,6 @@ let lc = null
 let textCount = 1
 let previousDrawing = null
 
-// function reveal() {
-//   for (i = 1; i <= numOfPlayers; i++) {
-//     let modify = i
-//     $(`#${modify}`).css("display", "block")
-//   }
-// }
-
 function getNumOfPlayers() {
   numOfPlayers = $(`#numOfPlayers`).val()
   return numOfPlayers
