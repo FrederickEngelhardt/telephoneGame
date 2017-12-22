@@ -98,7 +98,7 @@ const createListeners = () => {
     let modify = count-1
     $(`#${modify}`).css("display", "none")
   }
-	if (status === 'textbox' && count > 1 )
+	if (status == 'textbox' && count > 1 )
 		previousDrawing = encodeOptimizedSVGDataUri(lc.getSVGString())
 
   // if (status === 'textbox' && count >= 2 ) {
